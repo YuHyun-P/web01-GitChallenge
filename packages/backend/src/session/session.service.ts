@@ -85,7 +85,6 @@ export class SessionService {
     session.problems.get(problemId).containerId = '';
     session.save();
   }
-
   private async getSessionById(id: string): Promise<Session> {
     return await this.sessionModel.findById(id);
   }
