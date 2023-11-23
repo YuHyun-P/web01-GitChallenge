@@ -5,9 +5,8 @@ import { Terminal } from "../components/terminal";
 import { Button } from "../design-system/components/common";
 import { flex } from "../design-system/tokens/utils.css";
 import quizContentMockData from "../mocks/apis/data/quizContentData";
+import * as styles from "../styles/demo.css";
 import { TerminalContentType } from "../types/terminalType";
-
-import * as styles from "./demo.css";
 
 const { category, title, description, keywords } = quizContentMockData;
 
