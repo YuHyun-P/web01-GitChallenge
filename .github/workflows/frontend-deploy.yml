@@ -2,8 +2,8 @@ name: "frontend-docker-build"
 
 on:
   push:
-    branches: [ "dev-fe" ]
-    
+    branches: ["dev-fe"]
+
 jobs:
   build:
     name: Build and Test
@@ -16,7 +16,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '18.17.1'
+          node-version: "18.17.1"
 
       - name: Corepack Enable
         run: corepack enable
@@ -25,9 +25,11 @@ jobs:
         run: yarn install
 
       - name: Build
-        run: | 
+        run: |
           cd packages/frontend
           yarn build
+        env:
+          NEXT_PUBLIC_BASE_URL: ${{secrets.NEXT_PUBLIC_BASE_URL}}
 
   docker:
     name: Deploy Docker Image
