@@ -55,6 +55,8 @@ jobs:
           file: ./packages/frontend/Dockerfile
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/git-challenge-frontend:0.1
+          build-args: |
+            NEXT_PUBLIC_BASE_URL=${{secrets.NEXT_PUBLIC_BASE_URL}}
 
   deploy:
     name: Deploy Frontend
